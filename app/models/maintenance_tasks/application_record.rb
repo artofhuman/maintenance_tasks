@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "active_record"
+
 module MaintenanceTasks
   # Base class for all records used by this engine.
   #
@@ -7,5 +9,7 @@ module MaintenanceTasks
   # maintenance tasks will live.
   class ApplicationRecord < ActiveRecord::Base
     self.abstract_class = true
+
+    establish_connection
   end
 end
